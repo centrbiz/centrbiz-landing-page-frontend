@@ -8,56 +8,12 @@ type SitePageShellProps = {
 	mainClassName?: string;
 };
 
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "SoftwareApplication",
-	name: "CentrBiz",
-	applicationCategory: "BusinessApplication",
-	operatingSystem: "Web",
-	url: "https://centrbiz.com/",
-	description:
-		"CentrBiz is a cloud-based business operations platform designed to help companies manage inventory, sales, queueing, appointments, customer management, and analytics from one centralized system.",
-	brand: {
-		"@type": "Brand",
-		name: "CentrBiz",
-	},
-	offers: {
-		"@type": "Offer",
-		price: "0",
-		priceCurrency: "USD",
-		description: "Start your free trial",
-	},
-	creator: {
-		"@type": "Organization",
-		name: "CentrBiz",
-		url: "https://centrbiz.com/",
-	},
-	audience: {
-		"@type": "BusinessAudience",
-		audienceType: "Small and medium-sized businesses",
-	},
-	featureList: [
-		"Inventory Management",
-		"POS System",
-		"Queue Management",
-		"Appointment Booking",
-		"CRM",
-		"Analytics Dashboard",
-		"Employee Management",
-		"Procurement",
-	],
-};
-
 export function SitePageShell({
 	children,
 	mainClassName = "",
 }: SitePageShellProps) {
 	return (
 		<div className="relative isolate min-h-screen overflow-hidden">
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-			/>
 			<div
 				className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[420px] bg-[radial-gradient(circle_at_top,rgba(10,63,143,0.2),transparent_52%)]"
 				aria-hidden

@@ -34,18 +34,10 @@ const rightColumnBenefits = benefits.filter((_, index) => index % 2 === 1);
 export function Benefits() {
   return (
     <section className="section-shell py-20">
-      <div className="relative overflow-hidden rounded-[32px] border border-cb-border/80 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.08)] md:p-8">
-        <div
-          className="pointer-events-none absolute -left-16 top-10 h-52 w-52 rounded-full bg-cb-primary/10 blur-3xl"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute -right-16 bottom-8 h-52 w-52 rounded-full bg-cb-green/10 blur-3xl"
-          aria-hidden
-        />
-
-        <div className="relative mb-8 border-b border-cb-border/70 pb-8">
-          <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-cb-border/70 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-cb-primary">
+      <div className="cb-section">
+        <div className="pointer-events-none absolute right-6 top-10 h-32 w-32 rounded-full bg-cb-green/[0.14] blur-3xl" aria-hidden />
+        <div className="relative mb-8 border-b border-white/60 pb-8">
+          <p className="cb-badge mb-4">
             <span className="h-1.5 w-1.5 rounded-full bg-cb-green" aria-hidden />
             Why CentrBiz
           </p>
@@ -62,14 +54,10 @@ export function Benefits() {
             {leftColumnBenefits.map(({ title, description, icon: Icon }) => (
               <article
                 key={title}
-                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-cb-border/80 bg-gradient-to-br from-white via-white to-cb-primary/5 p-5 shadow-[0_12px_34px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:border-cb-tech/35"
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/70 bg-white/80 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-sm"
               >
-                <span
-                  className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cb-primary via-cb-tech to-cb-green"
-                  aria-hidden
-                />
-                <span className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-cb-primary/15 bg-gradient-to-br from-cb-primary/15 via-cb-tech/10 to-cb-teal/20 text-cb-primary transition group-hover:scale-105">
-                  <Icon className="h-7 w-7" />
+                <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cb-azure via-white to-cb-mint text-cb-primary transition-colors group-hover:bg-cb-primary/10">
+                  <Icon className="h-6 w-6" />
                 </span>
                 <h3 className="text-lg font-semibold tracking-tight text-cb-text">{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-cb-muted">{description}</p>
@@ -81,14 +69,10 @@ export function Benefits() {
             {rightColumnBenefits.map(({ title, description, icon: Icon }) => (
               <article
                 key={title}
-                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-cb-border/80 bg-gradient-to-br from-white via-white to-cb-green/5 p-5 shadow-[0_12px_34px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:border-cb-tech/35"
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/70 bg-gradient-to-br from-white/[0.88] via-cb-azure/[0.55] to-cb-mint/[0.55] p-5 transition duration-300 hover:-translate-y-1 hover:shadow-sm"
               >
-                <span
-                  className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cb-primary via-cb-tech to-cb-green"
-                  aria-hidden
-                />
-                <span className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-cb-primary/15 bg-gradient-to-br from-cb-primary/15 via-cb-tech/10 to-cb-teal/20 text-cb-primary transition group-hover:scale-105">
-                  <Icon className="h-7 w-7" />
+                <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/80 text-cb-primary transition-colors group-hover:bg-cb-primary/10">
+                  <Icon className="h-6 w-6" />
                 </span>
                 <h3 className="text-lg font-semibold tracking-tight text-cb-text">{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-cb-muted">{description}</p>

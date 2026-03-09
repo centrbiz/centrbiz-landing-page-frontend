@@ -21,7 +21,7 @@ export function SectionHeading({
   return (
     <div className={`mb-10 flex max-w-3xl flex-col ${alignment}`}>
       {eyebrow ? (
-        <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-cb-border/70 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-cb-primary">
+        <p className="cb-badge mb-4">
           <span className="h-1.5 w-1.5 rounded-full bg-cb-green" aria-hidden />
           {eyebrow}
         </p>

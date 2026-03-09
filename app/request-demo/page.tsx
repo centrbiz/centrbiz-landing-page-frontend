@@ -29,7 +29,7 @@ export default async function RequestDemoPage({
 
       <section className="section-shell py-10 md:py-14">
         {isSent ? (
-          <div className="mb-5 rounded-2xl border border-cb-green/30 bg-cb-green/10 px-4 py-3 text-sm font-medium text-cb-text">
+          <div className="mb-5 rounded-2xl border border-cb-green/30 bg-cb-mint px-4 py-3 text-sm font-medium text-cb-text">
             Demo request sent successfully. Please check your inbox for next steps.
           </div>
         ) : null}
@@ -44,18 +44,24 @@ export default async function RequestDemoPage({
           </div>
         ) : null}
 
-        <div className="grid gap-8 rounded-[28px] border border-cb-border/80 bg-white p-8 shadow-soft md:p-10 lg:grid-cols-[1fr_1.05fr]">
+        <div className="cb-card grid gap-8 p-8 md:p-10 lg:grid-cols-[1fr_1.05fr]">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight text-cb-text">Tell us about your business</h2>
             <p className="mt-3 text-sm leading-7 text-cb-muted">
               We&apos;ll match your demo with the right module set and implementation flow.
             </p>
 
-            <ul className="mt-6 space-y-2 text-sm text-cb-muted">
-              <li>• Personalized product walkthrough</li>
-              <li>• Module and pricing recommendations</li>
-              <li>• Architecture and integration discussion</li>
-              <li>• Q&A with product specialists</li>
+            <ul className="mt-6 space-y-3 text-sm text-cb-muted">
+              {[
+                "Personalized product walkthrough",
+                "Module and pricing recommendations",
+                "Architecture and integration discussion",
+                "Q&A with product specialists",
+              ].map((item) => (
+                <li key={item} className="rounded-xl border border-white/70 bg-gradient-to-r from-cb-azure/70 to-cb-mint/70 px-4 py-3">
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -76,7 +82,7 @@ export default async function RequestDemoPage({
                 id="demoName"
                 name="demoName"
                 type="text"
-                className="w-full rounded-xl border border-cb-border px-4 py-3 text-sm outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                className="cb-input"
                 required
               />
             </div>
@@ -88,7 +94,7 @@ export default async function RequestDemoPage({
                 id="demoEmail"
                 name="demoEmail"
                 type="email"
-                className="w-full rounded-xl border border-cb-border px-4 py-3 text-sm outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                className="cb-input"
                 required
               />
             </div>
@@ -100,7 +106,7 @@ export default async function RequestDemoPage({
                 id="demoCompany"
                 name="demoCompany"
                 type="text"
-                className="w-full rounded-xl border border-cb-border px-4 py-3 text-sm outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                className="cb-input"
                 required
               />
             </div>
@@ -113,7 +119,7 @@ export default async function RequestDemoPage({
                 name="demoIndustry"
                 type="text"
                 placeholder="Retail, Clinic, Pharmacy..."
-                className="w-full rounded-xl border border-cb-border px-4 py-3 text-sm outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                className="cb-input"
               />
             </div>
             <div className="sm:col-span-2">
@@ -125,13 +131,13 @@ export default async function RequestDemoPage({
                 name="demoNotes"
                 rows={5}
                 placeholder="Tell us your modules of interest and pain points"
-                className="w-full rounded-xl border border-cb-border px-4 py-3 text-sm outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                className="cb-input"
               />
             </div>
 
             <button
               type="submit"
-              className="sm:col-span-2 inline-flex w-full items-center justify-center rounded-xl bg-cb-gradient px-5 py-3 text-sm font-semibold text-white shadow-card transition hover:opacity-95"
+              className="cb-button-primary sm:col-span-2 w-full"
             >
               Submit demo request
             </button>

@@ -14,9 +14,9 @@ export default function LoginPage() {
   return (
     <SitePageShell>
       <section className="section-shell py-14 md:py-20">
-        <div className="grid overflow-hidden rounded-[30px] border border-cb-border/80 bg-white shadow-soft lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="cb-card grid lg:grid-cols-[1.05fr_0.95fr]">
           <aside className="relative overflow-hidden bg-gradient-to-br from-cb-primary via-cb-tech to-cb-teal p-8 text-white md:p-10">
-            <div className="pointer-events-none absolute -left-14 top-6 h-40 w-40 rounded-full bg-white/15 blur-3xl" aria-hidden />
+            <div className="pointer-events-none absolute -left-14 top-6 h-40 w-40 rounded-full bg-white/[0.15] blur-3xl" aria-hidden />
             <div className="pointer-events-none absolute -right-14 bottom-8 h-40 w-40 rounded-full bg-white/10 blur-3xl" aria-hidden />
 
             <div className="relative">
@@ -25,7 +25,7 @@ export default function LoginPage() {
               <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight md:text-4xl">
                 Sign in to your CentrBiz workspace
               </h1>
-              <p className="mt-4 max-w-md text-sm leading-7 text-white/85 md:text-base">
+              <p className="mt-4 max-w-md text-sm leading-7 text-white/[0.85] md:text-base">
                 Access your operations command center and manage modules, branches, and teams from one secure platform.
               </p>
 
@@ -51,7 +51,7 @@ export default function LoginPage() {
             </div>
           </aside>
 
-          <div className="p-8 md:p-10">
+          <div className="site-wash p-8 md:p-10">
             <h2 className="text-2xl font-semibold tracking-tight text-cb-text">Log in</h2>
             <p className="mt-2 text-sm text-cb-muted">Use your work email and password.</p>
 
@@ -66,7 +66,7 @@ export default function LoginPage() {
                   type="email"
                   autoComplete="email"
                   placeholder="name@company.com"
-                  className="w-full rounded-xl border border-cb-border bg-white px-4 py-3 text-sm text-cb-text outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                  className="cb-input"
                   required
                 />
               </div>
@@ -86,7 +86,7 @@ export default function LoginPage() {
                   type="password"
                   autoComplete="current-password"
                   placeholder="Enter your password"
-                  className="w-full rounded-xl border border-cb-border bg-white px-4 py-3 text-sm text-cb-text outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                  className="cb-input"
                   required
                 />
               </div>
@@ -98,7 +98,7 @@ export default function LoginPage() {
 
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center rounded-xl bg-cb-gradient px-5 py-3 text-sm font-semibold text-white shadow-card transition hover:opacity-95"
+                className="cb-button-primary w-full"
               >
                 Log in to CentrBiz
               </button>

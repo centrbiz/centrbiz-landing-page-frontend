@@ -50,31 +50,49 @@ export function DashboardPreviews() {
       />
 
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
-        {panels.map(({ title, metric, detail, icon: Icon, bars }) => (
-          <article
-            key={title}
-            className="flex h-full flex-col rounded-2xl border border-cb-border bg-white p-4 shadow-card transition hover:-translate-y-0.5"
-          >
-            <div className="mb-3 flex items-center justify-between">
-              <span className="inline-flex rounded-lg bg-cb-primary/10 p-2 text-cb-primary">
-                <Icon className="h-4 w-4" />
-              </span>
-              <span className="text-xs font-medium text-cb-muted">Live</span>
-            </div>
-            <p className="text-sm font-semibold text-cb-text">{title}</p>
-            <p className="mt-1 text-lg font-semibold text-cb-text">{metric}</p>
-            <p className="mt-1 text-xs text-cb-muted">{detail}</p>
-            <div className="mt-auto flex items-end gap-1 pt-4">
-              {bars.map((height, index) => (
-                <span
-                  key={`${title}-${index}`}
-                  className="w-full rounded-sm bg-cb-gradient"
-                  style={{ height: `${height / 2}px` }}
-                />
-              ))}
-            </div>
-          </article>
-        ))}
+        {panels.map(({ title, metric, detail, icon: Icon, bars }, panelIndex) => {
+          const panelClasses = [
+            "from-cb-azure/95 via-white to-cb-azure/70",
+            "from-[#ecfbf8] via-white to-cb-mint/75",
+            "from-white via-cb-azure/70 to-cb-sky/20",
+            "from-cb-sand/95 via-white to-cb-mint/[0.65]",
+            "from-cb-azure/80 via-white to-cb-mint/80",
+          ];
+
+          const barClasses = [
+            "from-cb-navy via-cb-primary to-cb-tech",
+            "from-cb-tech via-cb-teal to-cb-green",
+            "from-cb-primary via-cb-tech to-cb-sky",
+            "from-cb-teal via-cb-green to-cb-lime",
+            "from-cb-primary via-cb-teal to-cb-green",
+          ];
+
+          return (
+            <article
+              key={title}
+              className={`flex h-full flex-col rounded-2xl border border-white/70 bg-gradient-to-br p-4 transition hover:-translate-y-0.5 hover:shadow-sm ${panelClasses[panelIndex]}`}
+            >
+              <div className="mb-3 flex items-center justify-between">
+                <span className="inline-flex rounded-lg bg-white/[0.85] p-2 text-cb-primary shadow-sm">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <span className="text-xs font-medium text-cb-muted">Live</span>
+              </div>
+              <p className="text-sm font-semibold text-cb-text">{title}</p>
+              <p className="mt-1 text-lg font-semibold text-cb-text">{metric}</p>
+              <p className="mt-1 text-xs text-cb-muted">{detail}</p>
+              <div className="mt-auto flex items-end gap-1 pt-4">
+                {bars.map((height, index) => (
+                  <span
+                    key={`${title}-${index}`}
+                    className={`w-full rounded-sm bg-gradient-to-t transition-opacity hover:opacity-80 ${barClasses[panelIndex]}`}
+                    style={{ height: `${height / 2}px` }}
+                  />
+                ))}
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

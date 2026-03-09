@@ -8,9 +8,10 @@ export default function UnderDevelopmentPage() {
   return (
     <SitePageShell>
       <section className="section-shell py-20 md:py-28">
-        <div className="relative mx-auto max-w-4xl overflow-hidden rounded-[32px] border border-cb-border/80 bg-white p-8 shadow-soft md:p-12">
-          <div className="pointer-events-none absolute -left-14 top-10 h-44 w-44 rounded-full bg-cb-primary/12 blur-3xl" aria-hidden />
-          <div className="pointer-events-none absolute -right-14 bottom-6 h-44 w-44 rounded-full bg-cb-green/12 blur-3xl" aria-hidden />
+        <div className="cb-section mx-auto max-w-4xl p-8 md:p-12">
+          <div className="pointer-events-none absolute -left-14 top-10 h-44 w-44 rounded-full bg-cb-primary/[0.14] blur-3xl" aria-hidden />
+          <div className="pointer-events-none absolute right-12 top-8 h-32 w-32 rounded-full bg-cb-tech/[0.14] blur-3xl" aria-hidden />
+          <div className="pointer-events-none absolute -right-14 bottom-6 h-44 w-44 rounded-full bg-cb-green/[0.14] blur-3xl" aria-hidden />
 
           <div className="relative text-center">
             <BrandLogo variant="stacked" size="lg" className="mb-6" />
@@ -28,25 +29,25 @@ export default function UnderDevelopmentPage() {
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
                 href="/"
-                className="inline-flex items-center justify-center rounded-xl bg-cb-gradient px-5 py-3 text-sm font-semibold text-white shadow-card transition hover:opacity-95"
+                className="cb-button-primary"
               >
                 Back to homepage
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-xl border border-cb-border bg-white px-5 py-3 text-sm font-semibold text-cb-text transition hover:border-cb-tech/40"
+                className="cb-button-secondary"
               >
                 Contact team
               </Link>
             </div>
 
             <div className="mx-auto mt-10 grid max-w-2xl gap-3 sm:grid-cols-2">
-              <article className="rounded-2xl border border-cb-border bg-cb-light/60 p-4 text-left">
+              <article className="rounded-2xl border border-white/70 bg-gradient-to-br from-cb-azure/[0.85] to-white p-4 text-left">
                 <Rocket className="h-4 w-4 text-cb-primary" />
                 <p className="mt-2 text-sm font-semibold text-cb-text">Feature rollout in progress</p>
                 <p className="mt-1 text-xs text-cb-muted">New pages and workflows are being finalized.</p>
               </article>
-              <article className="rounded-2xl border border-cb-border bg-cb-light/60 p-4 text-left">
+              <article className="rounded-2xl border border-white/70 bg-gradient-to-br from-cb-mint/80 to-white p-4 text-left">
                 <ShieldCheck className="h-4 w-4 text-cb-green" />
                 <p className="mt-2 text-sm font-semibold text-cb-text">Production-ready standards</p>
                 <p className="mt-1 text-xs text-cb-muted">Quality, responsiveness, and consistency remain prioritized.</p>

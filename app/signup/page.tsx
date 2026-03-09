@@ -15,9 +15,9 @@ export default function SignupPage() {
     <SitePageShell>
       <section className="section-shell py-14 md:py-20">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="rounded-[28px] border border-cb-border/80 bg-white p-8 shadow-soft md:p-10">
+          <div className="cb-card p-8 md:p-10">
             <BrandLogo size="md" className="mb-6" />
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cb-primary">Start Free Trial</p>
+            <p className="cb-badge">Start Free Trial</p>
             <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-cb-text md:text-4xl">
               Launch your CentrBiz workspace
             </h1>
@@ -27,7 +27,7 @@ export default function SignupPage() {
 
             <div className="mt-8 space-y-3">
               {checklist.map((item) => (
-                <p key={item} className="inline-flex w-full items-center gap-2 rounded-xl border border-cb-border bg-cb-light/70 px-3 py-2 text-sm text-cb-muted">
+                <p key={item} className="inline-flex w-full items-center gap-2 rounded-xl border border-white/70 bg-gradient-to-r from-cb-azure/70 to-cb-mint/70 px-3 py-2 text-sm text-cb-muted">
                   <CheckCircle2 className="h-4 w-4 text-cb-green" />
                   {item}
                 </p>
@@ -35,7 +35,7 @@ export default function SignupPage() {
             </div>
           </div>
 
-          <div className="rounded-[28px] border border-cb-border/80 bg-white p-8 shadow-soft md:p-10">
+          <div className="cb-card p-8 md:p-10">
             <h2 className="text-2xl font-semibold tracking-tight text-cb-text">Create account</h2>
             <p className="mt-2 text-sm text-cb-muted">No credit card required for trial setup.</p>
 
@@ -48,7 +48,7 @@ export default function SignupPage() {
                   id="firstName"
                   name="firstName"
                   type="text"
-                  className="w-full rounded-xl border border-cb-border px-4 py-3 text-sm outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                  className="cb-input"
                   required
                 />
               </div>
@@ -61,7 +61,7 @@ export default function SignupPage() {
                   id="lastName"
                   name="lastName"
                   type="text"
-                  className="w-full rounded-xl border border-cb-border px-4 py-3 text-sm outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                  className="cb-input"
                   required
                 />
               </div>
@@ -74,7 +74,7 @@ export default function SignupPage() {
                   id="company"
                   name="company"
                   type="text"
-                  className="w-full rounded-xl border border-cb-border px-4 py-3 text-sm outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                  className="cb-input"
                   required
                 />
               </div>
@@ -88,7 +88,7 @@ export default function SignupPage() {
                   name="email"
                   type="email"
                   autoComplete="email"
-                  className="w-full rounded-xl border border-cb-border px-4 py-3 text-sm outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                  className="cb-input"
                   required
                 />
               </div>
@@ -102,7 +102,7 @@ export default function SignupPage() {
                   name="password"
                   type="password"
                   autoComplete="new-password"
-                  className="w-full rounded-xl border border-cb-border px-4 py-3 text-sm outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                  className="cb-input"
                   required
                 />
               </div>
@@ -114,7 +114,7 @@ export default function SignupPage() {
 
               <button
                 type="submit"
-                className="sm:col-span-2 inline-flex w-full items-center justify-center rounded-xl bg-cb-gradient px-5 py-3 text-sm font-semibold text-white shadow-card transition hover:opacity-95"
+                className="cb-button-primary sm:col-span-2 w-full"
               >
                 Create free trial workspace
               </button>

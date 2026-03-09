@@ -299,7 +299,7 @@ export default async function ContentPage({ params }: { params: Promise<{ slug: 
             <article
               key={section.title}
               id={section.id}
-              className="scroll-mt-28 rounded-3xl border border-cb-border/80 bg-white p-6 shadow-card"
+              className="cb-card-soft scroll-mt-28 p-6"
             >
               <h2 className="text-lg font-semibold tracking-tight text-cb-text">{section.title}</h2>
               <p className="mt-3 text-sm leading-7 text-cb-muted">{section.description}</p>
@@ -307,7 +307,7 @@ export default async function ContentPage({ params }: { params: Promise<{ slug: 
           ))}
         </div>
 
-        <div className="mt-8 rounded-2xl border border-cb-border bg-cb-light/80 p-4 text-center text-sm text-cb-muted">
+        <div className="mt-8 rounded-2xl border border-white/70 bg-gradient-to-r from-cb-azure/75 via-white/[0.85] to-cb-mint/75 p-4 text-center text-sm text-cb-muted">
           Need a tailored walkthrough for your business context?{" "}
           <Link href="/request-demo" className="font-semibold text-cb-primary hover:text-cb-tech">
             Book a demo

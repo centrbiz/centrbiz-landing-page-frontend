@@ -75,18 +75,18 @@ export function CoreFeatures() {
 				{features.map(({ title, description, icon: Icon }) => (
 					<article
 						key={title}
-						className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-cb-border/80 bg-white p-6 shadow-[0_14px_40px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:border-cb-tech/40"
+						className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-white/70 bg-white/[0.84] p-6 shadow-[0_14px_40px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:border-cb-tech/40"
 					>
 						<span
 							className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cb-primary via-cb-tech to-cb-teal opacity-80"
 							aria-hidden
 						/>
 						<span
-							className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-cb-tech/10 blur-2xl transition group-hover:bg-cb-tech/15"
+							className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-cb-tech/10 blur-2xl transition group-hover:bg-cb-tech/[0.15]"
 							aria-hidden
 						/>
 
-						<span className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-cb-primary/15 bg-gradient-to-br from-cb-primary/15 via-cb-tech/10 to-cb-teal/20 text-cb-primary transition group-hover:scale-105 group-hover:text-cb-tech">
+						<span className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-cb-primary/[0.15] bg-gradient-to-br from-cb-primary/[0.15] via-cb-tech/10 to-cb-teal/20 text-cb-primary transition group-hover:scale-105 group-hover:text-cb-tech">
 							<Icon className="h-7 w-7" />
 						</span>
 						<p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-cb-muted">

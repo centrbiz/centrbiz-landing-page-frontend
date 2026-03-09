@@ -30,18 +30,18 @@ export function HowItWorks() {
         align="center"
       />
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-3">
         {steps.map(({ title, description, icon: Icon }, index) => (
-          <article key={title} className="flex h-full flex-col rounded-2xl border border-cb-border bg-white p-5 shadow-card">
-            <div className="mb-4 flex items-center justify-between">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cb-gradient text-xs font-semibold text-white">
+          <article key={title} className="cb-card-soft flex h-full flex-col p-6 transition hover:-translate-y-1 hover:shadow-sm">
+            <div className="mb-6 flex items-center justify-between">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-cb-azure to-cb-mint text-sm font-semibold text-cb-text">
                 {index + 1}
               </span>
-              <span className="inline-flex rounded-lg bg-cb-primary/10 p-2 text-cb-primary">
-                <Icon className="h-4 w-4" />
+              <span className="inline-flex rounded-xl bg-gradient-to-br from-cb-azure via-white to-cb-mint p-2.5 text-cb-primary">
+                <Icon className="h-5 w-5" />
               </span>
             </div>
-            <h3 className="text-base font-semibold text-cb-text">{title}</h3>
+            <h3 className="text-lg font-semibold text-cb-text">{title}</h3>
             <p className="mt-2 text-sm leading-6 text-cb-muted">{description}</p>
           </article>
         ))}

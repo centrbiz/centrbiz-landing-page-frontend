@@ -20,11 +20,11 @@ export default function ContactPage() {
       />
 
       <section className="section-shell py-10 md:py-14">
-        <div className="grid gap-8 rounded-[28px] border border-cb-border/80 bg-white p-8 shadow-soft md:p-10 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="cb-card grid gap-8 p-8 md:p-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="space-y-3">
             {channels.map(({ label, value, icon: Icon }) => (
-              <article key={label} className="flex items-center gap-3 rounded-2xl border border-cb-border bg-cb-light/70 p-4">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cb-primary/10 text-cb-primary">
+              <article key={label} className="flex items-center gap-3 rounded-2xl border border-white/70 bg-gradient-to-r from-white/[0.88] to-cb-azure/70 p-4">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cb-azure via-white to-cb-mint text-cb-primary">
                   <Icon className="h-4 w-4" />
                 </span>
                 <div>
@@ -44,7 +44,7 @@ export default function ContactPage() {
                 id="contactName"
                 name="contactName"
                 type="text"
-                className="w-full rounded-xl border border-cb-border px-4 py-3 text-sm outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                className="cb-input"
                 required
               />
             </div>
@@ -56,7 +56,7 @@ export default function ContactPage() {
                 id="contactEmail"
                 name="contactEmail"
                 type="email"
-                className="w-full rounded-xl border border-cb-border px-4 py-3 text-sm outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                className="cb-input"
                 required
               />
             </div>
@@ -68,13 +68,13 @@ export default function ContactPage() {
                 id="contactMessage"
                 name="contactMessage"
                 rows={6}
-                className="w-full rounded-xl border border-cb-border px-4 py-3 text-sm outline-none transition focus:border-cb-tech/50 focus:ring-2 focus:ring-cb-tech/15"
+                className="cb-input"
                 required
               />
             </div>
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-xl bg-cb-gradient px-5 py-3 text-sm font-semibold text-white shadow-card transition hover:opacity-95"
+              className="cb-button-primary"
             >
               Send message
             </button>

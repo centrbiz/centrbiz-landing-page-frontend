@@ -67,22 +67,13 @@ const trustSignals = ["Modular rollout", "Role-based control", "Audit-ready", "A
 export function TrustIndustries() {
   return (
     <section className="section-shell scroll-mt-28 py-20" id="industries">
-      <div className="relative overflow-hidden rounded-[32px] border border-cb-border/80 bg-white p-6 shadow-[0_18px_46px_rgba(15,23,42,0.08)] md:p-10">
-        <div
-          className="pointer-events-none absolute -left-16 top-8 h-48 w-48 rounded-full bg-cb-primary/10 blur-3xl"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute -right-14 bottom-8 h-48 w-48 rounded-full bg-cb-green/10 blur-3xl"
-          aria-hidden
-        />
-        <div className="pointer-events-none absolute inset-0 bg-grid opacity-40" aria-hidden />
-
+      <div className="cb-section">
+        <div className="pointer-events-none absolute -left-16 top-12 h-40 w-40 rounded-full bg-cb-primary/[0.16] blur-3xl" aria-hidden />
+        <div className="pointer-events-none absolute right-10 top-10 h-32 w-32 rounded-full bg-cb-teal/[0.14] blur-3xl" aria-hidden />
         <div className="relative">
-          <div className="mb-8 flex flex-col gap-5 border-b border-cb-border/70 pb-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="mb-12 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
-              <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-cb-border/70 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-cb-primary">
-                <span className="h-1.5 w-1.5 rounded-full bg-cb-green" aria-hidden />
+              <p className="mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-cb-primary">
                 Industries
               </p>
               <h2 className="text-3xl font-semibold leading-tight tracking-tight text-cb-text md:text-4xl">
@@ -96,7 +87,7 @@ export function TrustIndustries() {
               {trustSignals.map((signal) => (
                 <span
                   key={signal}
-                  className="inline-flex items-center justify-center rounded-full border border-cb-border bg-cb-light/80 px-3 py-2 text-xs font-semibold tracking-wide text-cb-muted"
+                  className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/75 px-4 py-2 text-xs font-semibold tracking-wide text-cb-muted"
                 >
                   {signal}
                 </span>
@@ -111,25 +102,17 @@ export function TrustIndustries() {
               return (
                 <article
                   key={name}
-                  className={`group relative flex min-h-[200px] flex-col overflow-hidden rounded-3xl border border-cb-border/80 bg-white/95 p-5 shadow-[0_12px_34px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:border-cb-tech/40 ${
+                  className={`group relative flex min-h-[200px] flex-col overflow-hidden rounded-2xl border border-white/70 bg-white/80 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-sm ${
                     longCard ? "sm:col-span-2 xl:col-span-2" : ""
                   }`}
                 >
                   <span
-                    className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cb-primary via-cb-tech to-cb-green"
+                    className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cb-navy via-cb-tech to-cb-green"
                     aria-hidden
                   />
-                  <span
-                    className="pointer-events-none absolute -right-10 -top-8 h-24 w-24 rounded-full bg-cb-tech/10 blur-2xl transition group-hover:bg-cb-tech/15"
-                    aria-hidden
-                  />
-
-                  <div className="mb-4 flex items-start justify-between gap-3">
-                    <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-cb-primary/15 bg-gradient-to-br from-cb-primary/15 via-cb-tech/10 to-cb-teal/20 text-cb-primary">
-                      <Icon className="h-7 w-7" />
-                    </span>
-                    <span className="rounded-full border border-cb-border bg-cb-light px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-cb-muted">
-                      Industry
+                  <div className="mb-5 flex items-start justify-between gap-3">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cb-azure via-white to-cb-mint text-cb-primary transition-colors group-hover:bg-cb-primary/10">
+                      <Icon className="h-6 w-6" />
                     </span>
                   </div>
 
@@ -143,7 +126,7 @@ export function TrustIndustries() {
             })}
           </div>
 
-          <div className="mt-6 grid gap-4 rounded-2xl border border-cb-border/80 bg-cb-light/70 p-4 md:grid-cols-3 md:p-5">
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cb-muted">Coverage</p>
               <p className="mt-1 text-2xl font-semibold tracking-tight text-cb-text">7+ Industry Tracks</p>

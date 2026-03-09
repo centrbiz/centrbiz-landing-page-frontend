@@ -18,13 +18,10 @@ const quickStats = [
 export function Hero() {
   return (
     <section className="section-shell relative overflow-hidden pb-16 pt-16 md:pb-24 md:pt-20" id="home">
-      <div className="bg-grid absolute inset-x-8 bottom-0 top-10 -z-10 rounded-[32px] opacity-60" aria-hidden />
-      <div className="absolute -left-12 top-20 -z-10 h-60 w-60 rounded-full bg-cb-primary/20 blur-3xl" aria-hidden />
-      <div className="absolute -right-10 top-32 -z-10 h-60 w-60 rounded-full bg-cb-green/20 blur-3xl" aria-hidden />
-
       <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-cb-border/80 bg-white/90 px-4 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-cb-primary">
+          <p className="cb-badge mb-5">
+            <span className="h-1.5 w-1.5 rounded-full bg-cb-green" aria-hidden />
             Connected Business Ecosystem
           </p>
           <h1 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-cb-text md:text-5xl lg:text-6xl">
@@ -36,13 +33,13 @@ export function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/signup"
-              className="inline-flex items-center justify-center rounded-xl bg-cb-gradient px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:opacity-95"
+              className="cb-button-primary px-6"
             >
               Start Free Trial
             </Link>
             <Link
               href="/request-demo"
-              className="inline-flex items-center justify-center rounded-xl border border-cb-border bg-white px-6 py-3 text-sm font-semibold text-cb-text transition hover:border-cb-tech/30 hover:text-cb-primary"
+              className="cb-button-secondary px-6"
             >
               Request Demo
             </Link>
@@ -63,30 +60,41 @@ export function Hero() {
           </div>
         </div>
 
-        <aside className="glass-panel relative rounded-3xl p-5 shadow-soft md:p-6">
+        <aside className="cb-card p-5 md:p-6">
+          <div className="pointer-events-none absolute -left-10 top-10 h-28 w-28 rounded-full bg-cb-primary/[0.18] blur-3xl" aria-hidden />
+          <div className="pointer-events-none absolute right-0 top-0 h-32 w-32 rounded-full bg-cb-green/[0.14] blur-3xl" aria-hidden />
           <div className="mb-5 flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-cb-muted">Workspace: Atlas Retail Group</p>
               <p className="text-xl font-semibold text-cb-text">Operations Command Center</p>
             </div>
-            <span className="rounded-full border border-cb-green/30 bg-cb-green/10 px-3 py-1 text-xs font-semibold text-cb-green">
+            <span className="rounded-full border border-cb-green/20 bg-cb-mint px-3 py-1 text-xs font-semibold text-cb-green">
               Live
             </span>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
-            {quickStats.map(({ label, value, icon: Icon }) => (
-              <article key={label} className="rounded-2xl border border-cb-border/80 bg-white/85 p-4 shadow-card">
-                <div className="mb-3 inline-flex rounded-xl bg-cb-primary/10 p-2 text-cb-primary">
-                  <Icon className="h-4 w-4" />
-                </div>
-                <p className="text-xs font-medium uppercase tracking-wide text-cb-muted">{label}</p>
-                <p className="mt-1 text-2xl font-semibold text-cb-text">{value}</p>
-              </article>
-            ))}
+            {quickStats.map(({ label, value, icon: Icon }, index) => {
+              const cardStyles = [
+                "border-cb-primary/[0.12] bg-cb-azure/80",
+                "border-cb-tech/[0.12] bg-white/90",
+                "border-cb-teal/[0.12] bg-[#ecfbf8]",
+                "border-cb-green/[0.12] bg-cb-sand/[0.85]",
+              ];
+
+              return (
+                <article key={label} className={`rounded-2xl border p-4 transition hover:-translate-y-0.5 hover:shadow-sm ${cardStyles[index]}`}>
+                  <div className="mb-3 inline-flex rounded-xl bg-white/75 p-2 text-cb-primary shadow-sm">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <p className="text-xs font-medium uppercase tracking-wide text-cb-muted">{label}</p>
+                  <p className="mt-1 text-2xl font-semibold text-cb-text">{value}</p>
+                </article>
+              );
+            })}
           </div>
 
-          <div className="mt-4 rounded-2xl border border-cb-border/80 bg-white p-4">
+          <div className="mt-4 rounded-2xl border border-white/70 bg-white/[0.72] p-4">
             <div className="mb-3 flex items-center justify-between">
               <p className="text-sm font-semibold text-cb-text">Ecosystem Activity</p>
               <Activity className="h-4 w-4 text-cb-tech" />
@@ -97,8 +105,8 @@ export function Hero() {
                   <span>POS Sync</span>
                   <span>97%</span>
                 </div>
-                <div className="h-2 rounded-full bg-slate-100">
-                  <div className="h-full w-[97%] rounded-full bg-cb-gradient" />
+                <div className="h-2 rounded-full bg-cb-azure">
+                  <div className="h-full w-[97%] rounded-full bg-gradient-to-r from-cb-navy via-cb-primary to-cb-tech" />
                 </div>
               </div>
               <div>
@@ -106,11 +114,11 @@ export function Hero() {
                   <span>Inventory Visibility</span>
                   <span>93%</span>
                 </div>
-                <div className="h-2 rounded-full bg-slate-100">
-                  <div className="h-full w-[93%] rounded-full bg-cb-gradient" />
+                <div className="h-2 rounded-full bg-cb-mint">
+                  <div className="h-full w-[93%] rounded-full bg-gradient-to-r from-cb-tech via-cb-teal to-cb-green" />
                 </div>
               </div>
-              <div className="rounded-xl border border-cb-border bg-cb-light p-3 text-sm text-cb-muted">
+              <div className="rounded-xl border border-cb-primary/10 bg-gradient-to-r from-cb-azure/90 via-white to-cb-mint/[0.85] p-3 text-sm text-cb-muted">
                 <span className="font-medium text-cb-text">+18.4%</span> operational efficiency over the last 30 days.
                 <TrendingUp className="ml-1 inline h-4 w-4 text-cb-green" />
               </div>

@@ -9,22 +9,32 @@ import { Infrastructure } from "@/components/landing/infrastructure";
 import { Modules } from "@/components/landing/modules";
 import { TrustIndustries } from "@/components/landing/trust-industries";
 import { SitePageShell } from "@/components/site/site-page-shell";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "CentrBiz | Run Your Entire Business from One Platform",
+	description:
+		"CentrBiz helps small and medium-sized businesses manage inventory, sales, queues, appointments, CRM, and analytics from one centralized cloud platform.",
+	alternates: {
+		canonical: "https://centrbiz.com/",
+	},
+};
 
 export default function HomePage() {
-  return (
-    <SitePageShell mainClassName="pb-24">
-      <div className="relative flex flex-col gap-24">
-        <Hero />
-        <TrustIndustries />
-        <Ecosystem />
-        <CoreFeatures />
-        <Modules />
-        <DashboardPreviews />
-        <Infrastructure />
-        <HowItWorks />
-        <Benefits />
-        <FinalCta />
-      </div>
-    </SitePageShell>
-  );
+	return (
+		<SitePageShell mainClassName="pb-24">
+			<div className="relative flex flex-col gap-24">
+				<Hero />
+				<TrustIndustries />
+				<Ecosystem />
+				<CoreFeatures />
+				<Modules />
+				<DashboardPreviews />
+				<Infrastructure />
+				<HowItWorks />
+				<Benefits />
+				<FinalCta />
+			</div>
+		</SitePageShell>
+	);
 }

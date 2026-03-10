@@ -49,50 +49,88 @@ export function DashboardPreviews() {
         description="CentrBiz surfaces real-time metrics from each enabled module so leadership and frontline teams work from aligned data."
       />
 
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
-        {panels.map(({ title, metric, detail, icon: Icon, bars }, panelIndex) => {
-          const panelClasses = [
-            "from-cb-azure/95 via-white to-cb-azure/70",
-            "from-[#ecfbf8] via-white to-cb-mint/75",
-            "from-white via-cb-azure/70 to-cb-sky/20",
-            "from-cb-sand/95 via-white to-cb-mint/[0.65]",
-            "from-cb-azure/80 via-white to-cb-mint/80",
-          ];
+      <div className="cb-section p-5 md:p-7">
+        <div
+          className="pointer-events-none absolute -left-8 top-6 h-32 w-32 rounded-full bg-cb-tech/10 blur-3xl"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute right-4 top-8 h-36 w-36 rounded-full bg-cb-green/[0.1] blur-3xl"
+          aria-hidden
+        />
+        <div className="mb-5 flex flex-col gap-3 rounded-[24px] border border-white/70 bg-white/[0.52] px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cb-muted">
+              Live command view
+            </p>
+            <p className="mt-1 text-base font-semibold text-cb-text">
+              Coordinated metrics across transaction, service, and inventory workflows
+            </p>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-cb-muted">
+            <span className="h-2.5 w-2.5 rounded-full bg-cb-green shadow-[0_0_0_6px_rgba(67,176,92,0.12)]" />
+            Updated every 15 seconds
+          </div>
+        </div>
 
-          const barClasses = [
-            "from-cb-navy via-cb-primary to-cb-tech",
-            "from-cb-tech via-cb-teal to-cb-green",
-            "from-cb-primary via-cb-tech to-cb-sky",
-            "from-cb-teal via-cb-green to-cb-lime",
-            "from-cb-primary via-cb-teal to-cb-green",
-          ];
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+          {panels.map(({ title, metric, detail, icon: Icon, bars }, panelIndex) => {
+            const panelClasses = [
+              "from-cb-azure/95 via-white to-cb-azure/72",
+              "from-[#ecfbf8] via-white to-cb-mint/78",
+              "from-white via-cb-azure/70 to-cb-sky/25",
+              "from-cb-sand/95 via-white to-cb-mint/[0.7]",
+              "from-cb-azure/82 via-white to-cb-mint/82",
+            ];
 
-          return (
-            <article
-              key={title}
-              className={`flex h-full flex-col rounded-2xl border border-white/70 bg-gradient-to-br p-4 transition hover:-translate-y-0.5 hover:shadow-sm ${panelClasses[panelIndex]}`}
-            >
-              <div className="mb-3 flex items-center justify-between">
-                <span className="inline-flex rounded-lg bg-white/[0.85] p-2 text-cb-primary shadow-sm">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <span className="text-xs font-medium text-cb-muted">Live</span>
-              </div>
-              <p className="text-sm font-semibold text-cb-text">{title}</p>
-              <p className="mt-1 text-lg font-semibold text-cb-text">{metric}</p>
-              <p className="mt-1 text-xs text-cb-muted">{detail}</p>
-              <div className="mt-auto flex items-end gap-1 pt-4">
-                {bars.map((height, index) => (
-                  <span
-                    key={`${title}-${index}`}
-                    className={`w-full rounded-sm bg-gradient-to-t transition-opacity hover:opacity-80 ${barClasses[panelIndex]}`}
-                    style={{ height: `${height / 2}px` }}
+            const barClasses = [
+              "from-cb-navy via-cb-primary to-cb-tech",
+              "from-cb-tech via-cb-teal to-cb-green",
+              "from-cb-primary via-cb-tech to-cb-sky",
+              "from-cb-teal via-cb-green to-cb-lime",
+              "from-cb-primary via-cb-teal to-cb-green",
+            ];
+
+            return (
+              <article
+                key={title}
+                className={`cb-rich-card flex h-full flex-col bg-gradient-to-br p-4 ${panelClasses[panelIndex]}`}
+              >
+                <div className="mb-3 flex items-center justify-between">
+                  <span className="inline-flex rounded-lg border border-white/70 bg-white/[0.9] p-2 text-cb-primary shadow-sm">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <span className="inline-flex items-center gap-1 rounded-full border border-white/70 bg-white/80 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-cb-muted">
+                    <span className="h-1.5 w-1.5 rounded-full bg-cb-green" />
+                    Live
+                  </span>
+                </div>
+                <p className="text-sm font-semibold text-cb-text">{title}</p>
+                <p className="mt-1 text-lg font-semibold text-cb-text">{metric}</p>
+                <p className="mt-1 text-xs text-cb-muted">{detail}</p>
+                <div className="mt-4 flex items-center justify-between text-[11px] font-medium text-cb-muted">
+                  <span>Signal strength</span>
+                  <span>{74 + panelIndex * 5}%</span>
+                </div>
+                <div className="mt-2 h-2 rounded-full bg-white/75">
+                  <div
+                    className={`h-full rounded-full bg-gradient-to-r ${barClasses[panelIndex]}`}
+                    style={{ width: `${74 + panelIndex * 5}%` }}
                   />
-                ))}
-              </div>
-            </article>
-          );
-        })}
+                </div>
+                <div className="mt-auto flex items-end gap-1 pt-5">
+                  {bars.map((height, index) => (
+                    <span
+                      key={`${title}-${index}`}
+                      className={`w-full rounded-sm bg-gradient-to-t transition-opacity hover:opacity-80 ${barClasses[panelIndex]}`}
+                      style={{ height: `${height / 2}px` }}
+                    />
+                  ))}
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

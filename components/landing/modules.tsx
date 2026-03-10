@@ -75,7 +75,7 @@ export function Modules() {
 				{modules.map(({ title, description, icon: Icon }) => (
 					<article
 						key={title}
-						className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-white/70 bg-white/[0.84] p-6 shadow-[0_16px_44px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:border-cb-primary/[0.35]"
+						className="cb-rich-card group flex h-full flex-col bg-[linear-gradient(180deg,rgba(255,255,255,0.88),rgba(255,255,255,0.74))] p-6 hover:-translate-y-1 hover:border-cb-primary/[0.35]"
 					>
 						<span
 							className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cb-tech via-cb-teal to-cb-green"

@@ -54,7 +54,7 @@ export function Benefits() {
             {leftColumnBenefits.map(({ title, description, icon: Icon }) => (
               <article
                 key={title}
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/70 bg-white/80 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-sm"
+                className="cb-rich-card group flex h-full flex-col bg-[linear-gradient(180deg,rgba(255,255,255,0.88),rgba(255,255,255,0.74))] p-5 hover:-translate-y-1"
               >
                 <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cb-azure via-white to-cb-mint text-cb-primary transition-colors group-hover:bg-cb-primary/10">
                   <Icon className="h-6 w-6" />
@@ -69,7 +69,7 @@ export function Benefits() {
             {rightColumnBenefits.map(({ title, description, icon: Icon }) => (
               <article
                 key={title}
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/70 bg-gradient-to-br from-white/[0.88] via-cb-azure/[0.55] to-cb-mint/[0.55] p-5 transition duration-300 hover:-translate-y-1 hover:shadow-sm"
+                className="cb-rich-card group flex h-full flex-col bg-gradient-to-br from-white/[0.92] via-cb-azure/[0.58] to-cb-mint/[0.58] p-5 hover:-translate-y-1"
               >
                 <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/80 text-cb-primary transition-colors group-hover:bg-cb-primary/10">
                   <Icon className="h-6 w-6" />

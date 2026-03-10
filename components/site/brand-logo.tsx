@@ -2,7 +2,7 @@ import Image from "next/image";
 
 type BrandLogoProps = {
 	variant?: "horizontal" | "stacked" | "icon";
-	size?: "sm" | "md" | "lg";
+	size?: "sm" | "md" | "lg" | "xl" | "xxl";
 	className?: string;
 };
 
@@ -10,6 +10,8 @@ const sizeMap = {
 	sm: { icon: 30, text: "text-xl" },
 	md: { icon: 38, text: "text-[1.75rem]" },
 	lg: { icon: 48, text: "text-[2rem]" },
+	xl: { icon: 60, text: "text-[2.5rem]" },
+	xxl: { icon: 72, text: "text-[3rem]" },
 };
 
 export function BrandLogo({
